@@ -36,14 +36,17 @@ function  Attention_Weights_Criterion:updateOutput(input, target)
     
     -- final results 
     self.output = torch.sum(sqrt_sum_top_pow_sum_L+sum_L_pow_sum_top) 
-
+    -- average it by number of predictions to coincide with 
+    -- the Language criterion(see neuraltalk2 LanguageModel.lua)
+    self.output = self.output / (input:size(1)*input:size(2))
+    
     return self.output 
 end 
 
 -- caculates gradient w.r.t input 
 -- self.gradInput: bz x L x top_attrs
 -- currently target is useless 
-function Attention_Weights_Criterion:updateGradInput(input, target) 
+function Attention_Weights_Criterion:updateGradInput(input, gradOutput) 
     -- difficulities: how to compute the gradients w.r.t input 
     self.gradInput:resizeAs(input) -- bz x L x top_attrs
 
@@ -85,5 +88,6 @@ function Attention_Weights_Criterion:updateGradInput(input, target)
     
     self.gradIntput = torch.cmul(first_term_1:expandAs(input), first_term_2:expandAs(input)) + torch.cmul(second_term_1:expandAs(input), second_term_2)
     --]]
+    self.gradInput:div(input:size(1)*input:size(2))
     return self.gradInput 
 end 
