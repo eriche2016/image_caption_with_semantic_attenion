@@ -193,8 +193,8 @@ if string.len(opt.start_from) > 0 then
   
   -- will we add the two loss together
   -- currently not add the loss of the attention weights 
-  protos.crit:add(atten_weights_crit, 0) -- weights for the attention weights criterion 
-  protos.crit:add(atten_weights_crit2, 0) 
+  protos.crit:add(atten_weights_crit, 1) -- weights for the attention weights criterion 
+  protos.crit:add(atten_weights_crit2, 1) 
 
   protos.expander = nn.FeatExpander(opt.seq_per_img) -- not in checkpoints, create manually
 else
