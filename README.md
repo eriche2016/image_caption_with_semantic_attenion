@@ -1,7 +1,20 @@
 
 # Image caption with semantic attention 
-### note that this repository are mainly borrowed from [neuraltalk2](https://github.com/karpathy/neuraltalk2), hats off to Karpathy, what a great job he has done! And the model implemented here is from [image caption with semantic attention](http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/You_Image_Captioning_With_CVPR_2016_paper.pdf), Quanzeng You et al. CVPR2016.
-### without regularization on attention weights
+
+My pretrained model can be found here [lstm]()[gru]()[rhn]()
+And my current scores (with ground-truth semantic words) are:
+
+|Model | Bleu_1        |Bleu_2    |Bleu_3 |Bleu_4 |METEOR |  CIDEr|
+| ------------- |:-------------:| :-------------:|:-------------:|:-------------:|:-------------:|-----:|
+| LSTM( beam size = 2)      | 0.833 | 0.723 |0.588 |0.466 |0.310 |1.358 |
+| RHN (beam size = 2)      | 0.875 | 0.750 | 0.612 |0.490 |0.326 |1.567 |
+
+
+# The following descriptions are adapted from [eriche2016's caption model](https://github.com/eriche2016/image_caption_with_semantic_attenion)
+
+Note that this repository are mainly borrowed from [neuraltalk2](https://github.com/karpathy/neuraltalk2), hats off to Karpathy, what a great job he has done! And the model implemented here is from [image caption with semantic attention](http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/You_Image_Captioning_With_CVPR_2016_paper.pdf), Quanzeng You et al. CVPR2016.
+
+**without regularization on attention weights**
 
 current results table
 
