@@ -1,7 +1,7 @@
 
 # Image caption with semantic attention 
 
-My pretrained model can be found here [lstm]()[gru]()[rhn]()
+My pretrained model can be found here [lstm](https://pan.baidu.com/s/1o7PBHMy), [gru](https://pan.baidu.com/s/1eR4ns46), [rhn](https://pan.baidu.com/s/1qYoAf4w)
 And my current scores (with ground-truth semantic words) are:
 
 |Model | Bleu_1        |Bleu_2    |Bleu_3 |Bleu_4 |METEOR |  CIDEr|
